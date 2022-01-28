@@ -32,7 +32,7 @@ pipeline{
         stage('Deploy') {
             
             agent {
-                label "docker"
+                docker "mallikarjunagouda/httpd-git"
             }
             
             steps {
