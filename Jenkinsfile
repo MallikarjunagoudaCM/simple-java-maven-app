@@ -7,7 +7,7 @@ pipeline{
         stage('SCM') {
             
             agent {
-                label "myslavemaven"
+                label "AWS_node"
                 }
           
             steps {
@@ -21,7 +21,7 @@ pipeline{
         stage('Build') {
             
             agent {
-                label "myslavemaven"
+                label "digital_node"
             }
             steps {
               echo "This is Build job"
@@ -32,7 +32,7 @@ pipeline{
         stage('Deploy') {
             
             agent {
-                label "myslavemaven"
+                label "docker"
             }
             
             steps {
