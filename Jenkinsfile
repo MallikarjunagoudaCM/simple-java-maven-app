@@ -4,20 +4,23 @@ pipeline{
   
     stages{
         
-        stage('SCM') {
+        stage('SCM checkout') {
             
             agent {
                 label "AWS_node"
                 }
+            environment {
+                 MAVEN_HOME = "/opt/apache-maven-3.6.3/bin"
+            }
           
             steps {
-              echo "This is SCM job"
-              sh "date"
+              git "https://github.com/MallikarjunagoudaCM/simple-java-maven-app.git"
+              sh "${MAVEN_HOME}/mvn "
               
             }
         
         }
-        
+        /*
         stage('Build') {
             
             agent {
@@ -40,7 +43,7 @@ pipeline{
             }
         
         }
-        
+        */
     }
     
     
