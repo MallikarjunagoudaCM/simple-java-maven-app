@@ -4,7 +4,7 @@ pipeline{
   
     stages{
         
-        stage('SCM checkout') {
+        stage('SCM checkout and build') {
             
             agent {
                 label "AWS_node"
@@ -15,7 +15,7 @@ pipeline{
           
             steps {
               git "https://github.com/MallikarjunagoudaCM/simple-java-maven-app.git"
-              sh "${MAVEN_HOME}/mvn "
+              sh "${MAVEN_HOME}/mvn clean package"
               
             }
         
