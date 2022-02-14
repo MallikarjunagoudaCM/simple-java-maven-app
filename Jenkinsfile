@@ -16,7 +16,10 @@ pipeline{
             steps {
               git "https://github.com/MallikarjunagoudaCM/simple-java-maven-app.git"
               sh "${MAVEN_HOME}/mvn clean package"
-              
+              sh 'pwd'
+              /* sshagent(['a6a793f6-2b73-4107-bc3b-39ce4461d106']) {
+                 
+              } */
             }
         
         }
