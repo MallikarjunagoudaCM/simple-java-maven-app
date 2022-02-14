@@ -18,7 +18,7 @@ pipeline{
               sh "${MAVEN_HOME}/mvn clean package"
               sh 'pwd'
               sshagent(['d23e63f8-c68c-4c29-be87-fe740f5746c4']) {
-                
+                sh 'scp -r /root/ws/ws/workspace/parameteizedpipe/target/* /home/ec2-user'
               }
             }
         
