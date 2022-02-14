@@ -10,16 +10,16 @@ pipeline{
                 label "digital_node"
                 }
             environment {
-                 MAVEN_HOME = "/opt/apache-maven-3.6.3/bin"
+                 MAVEN_HOME = "/opt/apache-maven-3.8.4/bin"
             }
           
             steps {
               git "https://github.com/MallikarjunagoudaCM/simple-java-maven-app.git"
               sh "${MAVEN_HOME}/mvn clean package"
               sh 'pwd'
-              /* sshagent(['a6a793f6-2b73-4107-bc3b-39ce4461d106']) {
-                 
-              } */
+              sshagent(['d23e63f8-c68c-4c29-be87-fe740f5746c4']) {
+                
+              }
             }
         
         }
