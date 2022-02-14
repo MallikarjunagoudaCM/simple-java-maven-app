@@ -7,7 +7,7 @@ pipeline{
         stage('SCM checkout and build') {
             
             agent {
-                label "AWS_node"
+                label "digital_node"
                 }
             environment {
                  MAVEN_HOME = "/opt/apache-maven-3.6.3/bin"
